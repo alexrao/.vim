@@ -1,7 +1,7 @@
 #### 个人vim配置(C语言开发)
-##个人开发环境(ubuntu15)
+"个人开发环境(ubuntu15)
 #.vim文档
-1. 获取github上:https://github.com/alexrao/vimrc.git的配置文件
+1. 获取github上: https://github.com/alexrao/vimrc.git 的配置文件
 2. 将所需的下载文件全都下载下来,供后续直接copy使用(当然其他工具ctags/cscope等需要自行安装)
 3. 根据个人习惯修改部分设置(TAB为4空格/cscope的自动添加等)
 
