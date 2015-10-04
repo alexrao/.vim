@@ -12,5 +12,5 @@
 c.vim问设置C语言函数高亮的处理,将文档的设置添加到(/usr/share/vim/vim74/c.vim)的最后面(不同版本的操作系统有些可能不是vim74,具体根据当前目录查看)
 
 #预览
-![vim](https://github.com/alexrao/.vim/blob/master/.vim/screenshots/vim.jpg)
+![vim1](https://raw.github.com/alexrao/.vim/master/.vim/screenshots/vim3.jpg)
 
