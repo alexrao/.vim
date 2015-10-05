@@ -33,8 +33,8 @@ emerge vim                                 # Gentoo
 
 ### Screenshots
 
-![Completions](https://raw.github.com/fuhu/.vimrc/master/screenshots/completions.gif)
-![Snippets](https://raw.github.com/fuhu/.vimrc/master/screenshots/snippets.gif)
+![Completions](https://raw.github.com/alexrao/.vim/master/.vim/screenshots/completions.gif)
+![Snippets](https://raw.github.com/alexrao/.vim/master/.vim/screenshots/snippets.gif)
 
 #### Sometimes we need to jump to previous positions to copy/paste or do some fixes:
 ## Fast navigation
@@ -124,8 +124,8 @@ YAML         | js-yaml       | `npm install -g js-yaml`
 
 ### Screenshots
 
-![Vim IDE 1](https://raw.github.com/fuhu/.vimrc/master/screenshots/vim.jpg)
-![Vim IDE 2](https://raw.github.com/fuhu/.vimrc/master/screenshots/vim2.jpg)
+![Vim IDE 1](https://raw.github.com/alexrao/.vim/master/.vim/screenshots/vim.jpg)
+![Vim IDE 2](https://raw.github.com/alexrao/.vim/master/.vim/screenshots/vim2.jpg)
 
 ## Other Utils
 
