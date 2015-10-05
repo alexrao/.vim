@@ -29,6 +29,10 @@ set incsearch
 "set highlight 	                                                  " conflict with highlight current line
 set ignorecase
 set smartcase
+"高亮匹配的查找
+set hls
+"查找时忽略大小写
+set ic
 
 " editor settings
 set history=1000
@@ -178,9 +182,13 @@ nmap <F5> :TagbarToggle<cr>
 nmap <F6> :NERDTreeToggle<cr>
 nmap <F3> :GundoToggle<cr>
 nmap <F4> :IndentGuidesToggle<cr>
-nmap  <D-/> :
-nnoremap <leader>a :Ack
-nnoremap <leader>v V`]
+"nmap  <D-/> :
+"nnoremap <leader>a :Ack
+"nnoremap <leader>v V`]
+nnoremap <C-a> ggV`]
+nnoremap <C-A> ggV`]
+nnoremap <C-f> :Ack <C-r><C-w>
+nnoremap <C-F> :Ack <C-r><C-w>
 
 " Useful Functions
 "------------------
@@ -244,7 +252,8 @@ if has("gui_running")
 endif
 
 "-----------------CTAGS----------------------" 
-map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>  
+"map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>  
+map <C-F12> :!ctags -R --sort=yes --c++-kinds=+xp --fields=+iaS --extra=+q -L .<CR>  
 set tags=tags
 set tags+=./tags "add current directory's generated tags file
 set tags+=./tags_all "add current directory's generated tags file
@@ -253,26 +262,52 @@ set tags+=./tags_all "add current directory's generated tags file
 "-----------------CTAGS----------------------" 
 
 "-----------------Cscope setting ----------------------" 
-if has("cscope")
-    set csprg=/usr/bin/cscope
-    set csto=1
-    set cst
-    set nocsverb
-    " add any database in current directory
-    if filereadable("cscope.out")
-        cs add cscope.out
-    endif
-    set csverb
-endif
-nmap <C-n> :cnext<CR>
-nmap <C-m> :cprev<CR>
-nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR> :copen<CR><CR>
-nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR> :copen<CR><CR>
-nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR> :copen<CR><CR>
-nmap <C-_>t :cs find t <C-R>=expand("<cword>")<CR><CR> :copen<CR><CR>
-nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR> :copen<CR><CR>
-nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-nmap <C-_>i :cs find i <C-R>=expand("<cfile>")<CR><CR> :copen<CR><CR>)))")")")")"
+"if has("cscope")
+"    set csprg=/usr/bin/cscope
+"    set csto=1
+"    set cst
+"    set nocsverb
+"    " add any database in current directory
+"    if filereadable("cscope.out")
+"        cs add cscope.out
+"    endif
+"    set csverb
+"endif
+"nmap <C-n> :cnext<CR>
+"nmap <C-m> :cprev<CR>
+"nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR> :copen<CR><CR>
+"nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+"nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR> :copen<CR><CR>
+"nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR> :copen<CR><CR>
+"nmap <C-_>t :cs find t <C-R>=expand("<cword>")<CR><CR> :copen<CR><CR>
+"nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR> :copen<CR><CR>
+"nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+"nmap <C-_>i :cs find i <C-R>=expand("<cfile>")<CR><CR> :copen<CR><CR>)))")")")")"
 "-----------------Cscope setting ----------------------" "
+
+"--------------------Doxygen--------------------------"
+"doxygen 使用
+"":Dox  :DoxLic :DoxAuthor   命令
+let g:DoxygenToolkit_commentType = "C"
+let g:DoxygenToolkit_briefTag_pre="@Brief    "
+let g:DoxygenToolkit_paramTag_pre="@Param    "
+let g:DoxygenToolkit_returnTag="@Returns  "
+let g:DoxygenToolkit_authorTag="@Author   "
+let g:DoxygenToolkit_dateTag="@Date     "
+let g:DoxygenToolkit_versionTag="@Version  "
+let g:DoxygenToolkit_briefTag_funcName="yes"
+let g:doxygen_enhanced_color=1
+"let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------" 
+"let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------" 
+let g:DoxygenToolkit_authorName="rxp rxp2013@163.com"
+let s:licenseTag = "Copyright(C) KRISVISION  All right reserved\<enter>"
+
+"快捷键
+map <F10>a :DoxAuthor<CR>
+map <F10>f :Dox <CR>
+map <F10>b :DoxBlock<CR>
+map <F10>c 0///<Left><Left>
+map <F10>l :DoxLic<CR>
+"--------------------Doxygen--------------------------"
+
 
