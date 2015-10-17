@@ -252,7 +252,7 @@ if has("gui_running")
 endif
 
 "-----------------CTAGS----------------------" 
-map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>  
+map <F9> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>  
 "map <C-F12> :!ctags -R --sort=yes --c++-kinds=+xp --fields=+iaS --extra=+q -L .<CR>  
 set tags=tags
 set tags+=./tags "add current directory's generated tags file
