@@ -304,11 +304,11 @@ let g:DoxygenToolkit_authorName="rxp rxp2013@163.com"
 let s:licenseTag = "Copyright(C) KRISVISION  All right reserved\<enter>"
 
 "快捷键
-map <F10>a :DoxAuthor<CR>
-map <F10>f :Dox <CR>
-map <F10>b :DoxBlock<CR>
-map <F10>c 0///<Left><Left>
-map <F10>l :DoxLic<CR>
+map <F8>a :DoxAuthor<CR>
+map <F8>f :Dox <CR>
+map <F8>b :DoxBlock<CR>
+map <F8>c 0///<Left><Left>
+map <F8>l :DoxLic<CR>
 "--------------------Doxygen--------------------------"
 
 
