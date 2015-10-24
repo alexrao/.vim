@@ -310,5 +310,3 @@ map <F8>b :DoxBlock<CR>
 map <F8>c 0///<Left><Left>
 map <F8>l :DoxLic<CR>
 "--------------------Doxygen--------------------------"
-
-
